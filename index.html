@@ -1,7 +1,22 @@
 <html><head>
 <title>Wanderizer - the random routes generator</title>
 <style>
-body, html {margin: 0; padding: 0;}
+body, html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+svg {
+    display: block;
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    left: 50%;
+    margin-left: -128px;
+    top: 50%;
+    margin-top: -128px;
+}
 </style>
 </head><body style="background: rgb(64, 128, 224);">
 <svg height="256" width="256">
