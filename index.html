@@ -8,7 +8,7 @@ body, html {
     height: 100%;
 }
 svg {
-    display: none;
+    display: block;
     width: 256px;
     height: 256px;
     position: absolute;
@@ -32,10 +32,14 @@ svg {
 <script>
 window.onload = function () {
     function showRandomArrow() {
-        console.log('random');
+        for (var i = 0; i < 3; i++) {
+            document.getElementById('arrow-'+i).style.display = 'none';
+        }
+        var j = Math.floor(Math.random()*3);
+        document.getElementById('arrow-'+j).style.display = 'block';
     };
     showRandomArrow();
-    document.body.addEventListener('click', showRandomArrow);
+    window.onclick = function () { showRandomArrow() };
 };
 </script>
 </body></html>
