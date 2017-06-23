@@ -8,7 +8,7 @@ body, html {
     height: 100%;
 }
 svg {
-    display: block;
+    display: none;
     width: 256px;
     height: 256px;
     position: absolute;
@@ -20,13 +20,22 @@ svg {
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head><body style="background: rgb(64, 128, 224);">
-<svg height="256" width="256">
+<svg height="256" width="256" id="arrow-0">
   <path d="M224 128 L160 64 L160 96 L32 96 L64 128 L32 160 L160 160 L160 192 Z" fill="rgb(192, 0, 96)" />
 </svg>
-<svg height="256" width="256">
+<svg height="256" width="256" id="arrow-1">
   <path d="M32 128 L96 192 L96 160 L224 160 L192 128 L224 96 L96 96 L96 64 Z" fill="rgb(192, 0, 96)" />
 </svg>
-<svg height="256" width="256">
+<svg height="256" width="256" id="arrow-2">
   <path d="M128 32 L64 96 L96 96 L96 224 L128 192 L160 224 L160 96 L192 96 Z" fill="rgb(192, 0, 96)" />
 </svg>
+<script>
+window.onload = function () {
+    function showRandomArrow() {
+        console.log('random');
+    };
+    showRandomArrow();
+    document.body.addEventListener('click', showRandomArrow);
+};
+</script>
 </body></html>
