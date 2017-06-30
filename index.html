@@ -44,6 +44,10 @@ window.onload = function () {
         for (var p = 0; p < paths.length; p++) {
             paths[p].style.fill = 'rgb(' + r + ',' + g + ',' + b + ')';
         }
+        r = r + ((r < 128) ? 128 : (-128));
+        g = g + ((g < 128) ? 128 : (-128));
+        b = b + ((b < 128) ? 128 : (-128));
+        document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
     };
     showRandomArrow();
     window.onclick = function () { showRandomArrow() };
