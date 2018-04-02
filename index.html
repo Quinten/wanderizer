@@ -46,6 +46,17 @@ window.onload = function () {
         }
         var j = Math.floor(Math.random()*3);
         document.getElementById('arrow-'+j).style.display = 'block';
+        var paths = document.getElementsByTagName("path");
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+        for (var p = 0; p < paths.length; p++) {
+            paths[p].style.fill = 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        r = r + ((r < 128) ? 128 : (-128));
+        g = g + ((g < 128) ? 128 : (-128));
+        b = b + ((b < 128) ? 128 : (-128));
+        document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
     };
     showRandomArrow();
     document.getElementById('wrapper').addEventListener('click', showRandomArrow);
