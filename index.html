@@ -59,7 +59,11 @@ window.onload = function () {
         document.body.style.background = 'rgb(' + r + ',' + g + ',' + b + ')';
     };
     showRandomArrow();
-    document.getElementById('wrapper').addEventListener('click', showRandomArrow);
+    if ('ontouchend' in window) {
+        window.ontouchend = function () { showRandomArrow() };
+    } else {
+        window.onclick = function () { showRandomArrow() };
+    }
 };
 </script>
 </body></html>
